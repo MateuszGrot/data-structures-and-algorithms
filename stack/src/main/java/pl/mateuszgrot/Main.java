@@ -28,6 +28,39 @@ public class Main {
 
         // easy to overload a memory, out of memory error - heap space
 
+        // EXAMPLE OF USING STACK -  REVERS ARRAY
+
+        int[] array = {1, 2, 3, 4, 5};
+
+        System.out.println("Array before revers: ");
+        printArray(array);
+
+        reverseArray(array);
+        System.out.println();
+        System.out.println("Array after revers: ");
+        printArray(array);
+
+
+    }
+
+    private static void reverseArray(int[] array) {
+
+        Stack<Integer> integerStack = new Stack<>();
+
+        for (int i = 0; i < array.length; i++) {
+            integerStack.push(array[i]);
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = integerStack.pop();
+        }
+
+    }
+
+    private static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
 
     }
 }
